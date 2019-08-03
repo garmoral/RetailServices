@@ -44,12 +44,12 @@ Levantar Servicios
     java -jar user-web/target/user-web-1.0-SNAPSHOT.jar
 ```
 
-Varificar instalación
+Verificar instalación
 ```
     http://localhost:8000/
 ```
 
-Varificar servicios desde al api manager
+Verificar servicios desde al api manager
 ```
     http://localhost:8000/api/orders/order/test
     http://localhost:8000/api/products/product/test
