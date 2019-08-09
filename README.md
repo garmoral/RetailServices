@@ -62,3 +62,36 @@ Directo a los servicios
     http://localhost:8300/product/test
     http://localhost:8100/user/test
 ```
+
+
+Dockerfile (api-manager)
+```
+    docker build -t api_manager -f Dockerfile-apimanager .
+    docker run -d -p 8000:8000 api_manager
+```
+
+Dockerfile-order
+```
+    docker build -t api_order_service -f Dockerfile-order .
+    docker run -d -p 8200:8200 api_order_service
+```
+
+Dockerfile-product
+```
+    docker build -t api_product_service -f Dockerfile-product .
+    docker run -d -p 8300:8300 api_product_service
+```
+
+Dockerfile-user
+```
+    docker build -t api_user_service -f Dockerfile-user .
+    docker run -d -p 8100:8100 api_user_service
+```
+
+Docker compose
+```
+    docker-compose up -d
+    docker network connect reatilservices_default postgresdb
+    docker network disconnect reatilservices_default postgresdb
+    docker-compose down --rmi all
+```
